@@ -82,7 +82,7 @@ Each module follows DDD principles with:
 - **Framework:** Laravel 12
 - **Language:** PHP 8.4
 - **Architecture:** DDD, SOLID, Modular (nwidart/laravel-modules)
-- **Database:** MySQL 8+ with Eloquent ORM
+- **Database:** MySQL 8+ with Eloquent ORM (used only in Infrastructure layer)
 - **Auth:** Laravel Sanctum (session-based)
 - **Storage:** Cloudflare R2 (public/private buckets)
 - **Testing:** Pest
@@ -97,6 +97,7 @@ Each module follows DDD principles with:
 - **HTTP:** Axios with interceptors
 
 ### Development Patterns
+- **ID Strategy:** String IDs in domain layer, int in database (cast at repository boundaries with IdCaster)
 - **Error Handling:** `useNotification()` composable (no alerts)
 - **API Calls:** `useApi()` composable with automatic CSRF handling
 - **Type Safety:** No `as any` - generics and helper functions

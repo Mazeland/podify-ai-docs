@@ -104,10 +104,12 @@ The application follows **Domain-Driven Design** with 3 bounded contexts:
 - Event Listeners: Consumes `UserCreated` to initialize credits
 
 ### Key Architectural Patterns
-- **UseCases** for business workflows (no "Application" layer)
-- **Domain Events** for cross-module communication
-- **String IDs** in domain layer, int in database (cast at repository boundaries)
-- **Anti-Corruption Layers** for external/cross-module dependencies
+- **Application Layer** (`Modules/{Module}/app/`) contains UseCases, Policies, Jobs, and Commands
+- **UseCases** (`Modules/{Module}/app/UseCases/`) for business workflows
+- **Domain Events** (`Modules/{Module}/Domain/Events/`) for cross-module communication
+- **Event Listeners** (`Modules/{Module}/Infrastructure/Listeners/`) handle domain events
+- **String IDs** in domain layer, int in database (cast at repository boundaries with IdCaster)
+- **Anti-Corruption Layers** (`Modules/{Module}/Infrastructure/AntiCorruption/`) for external/cross-module dependencies
 
 See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed patterns and structure.
 
@@ -118,12 +120,12 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed patterns and structure.
 ### Backend (Laravel 12, PSR-12, DDD)
 
 **Required Components**:
-- **FormRequests**: All validation logic
-- **Policies**: All authorization logic
-- **UseCases**: Business workflows (in `app/UseCases/`)
-- **Events**: Side-effects and cross-module communication
-- **Resources**: Consistent JSON responses (JsonResource)
-- **Jobs**: Heavy tasks with idempotency
+- **FormRequests**: All validation logic (`Modules/{Module}/UI/Http/Requests/`)
+- **Policies**: All authorization logic (`Modules/{Module}/app/Policies/`)
+- **UseCases**: Business workflows (`Modules/{Module}/app/UseCases/`)
+- **Events**: Side-effects and cross-module communication (`Modules/{Module}/Domain/Events/`)
+- **Resources**: Consistent JSON responses (`Modules/{Module}/UI/Http/Resources/`)
+- **Jobs**: Heavy tasks with idempotency (`Modules/{Module}/app/Jobs/`)
 
 **Code Standards**:
 - PSR-12 coding standard
