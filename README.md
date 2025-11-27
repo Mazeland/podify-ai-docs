@@ -79,6 +79,9 @@ Each module follows DDD principles with:
 
 ## Tech Stack
 
+### Application Architecture
+**Headless API + SPA** - Laravel serves as a headless API backend with no server-rendered views. The Vue 3 frontend is fully decoupled and communicates exclusively via RESTful JSON endpoints. This enables independent deployment, better frontend performance, and clear separation between business logic (backend) and presentation (frontend).
+
 ### Backend
 - **Framework:** Laravel 12
 - **Language:** PHP 8.4
