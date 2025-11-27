@@ -213,7 +213,7 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for event patterns.
 
 ## Roadmap
 
-**Core Features (Implemented):**
+**Core Features (Work in Progress):**
 - User authentication & authorization
 - AI image generation
 - Product catalog
