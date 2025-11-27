@@ -565,6 +565,22 @@ Things I deliberately avoided:
 - **Repository for everything** - Simple lookups sometimes just need Eloquent. Repositories are for complex queries and abstraction.
 - **100% framework-agnostic domain** - PHP has great features. Using readonly, enums, and typed properties makes sense even if it couples to PHP 8.4.
 
+## What I Learned
+
+Building this taught me practical lessons about implementing SOLID and DDD principles in a real-world application:
+
+- **Designed custom DDD structure within Laravel modules** - nwidart/laravel-modules provides basic module scaffolding, but I learned to structure Domain, Application, Infrastructure, and UI layers according to DDD principles. This required understanding bounded contexts and designing the folder hierarchy from scratch.
+- **Applied DDD pragmatically per domain** - Implemented basic structure for Auth, but added ValueObjects and Specifications for Shop's complex business logic. Learned that forcing patterns everywhere creates unnecessary complexity; let domain needs guide architectural decisions.
+- **Implemented string IDs at boundaries** - Designed IdCaster pattern to handle JavaScript's safe integer limit (2^53). This boundary strategy keeps domain entities clean while preventing int64 overflow issues that are nearly impossible to debug in production.
+- **Solved middleware ordering issues** - Debugged double middleware registration in Laravel's module lifecycle. Documented the solution because these edge cases are easy to forget and painful to rediscover.
+- **Refactored to repository pattern for performance** - Implemented batch loading that reduced 49 queries to 3 for 24 products per page (16x improvement). Clean abstractions made this optimization a 30-minute refactor instead of a multi-day rewrite.
+- **Enforced TypeScript without escape hatches** - Eliminated all `as any` casts by designing generic types and helper functions upfront. This discipline prevents type safety from breaking at runtime during refactors.
+- **Built event-driven architecture** - Designed cross-module communication via domain events. Subscription module reacts to Auth events without coupling, enabling independent refactoring of each bounded context.
+
+## Summary
+
+This architecture implements Domain-Driven Design with clean architecture principles, providing clear separation between domain logic, business workflows, and infrastructure concerns. The modular structure enables independent development of bounded contexts while maintaining consistency through shared patterns and domain events.
+
 ### Middleware Configuration (Critical)
 
 **Incident Report: Double Middleware Authentication Bug**
@@ -690,15 +706,3 @@ await fetch('/api/auth/user', {credentials: 'include'}).then(r => r.json());
 1. **Continuous Improvement**: Feature [roadmap](README.md#roadmap) documented and prioritized for future development
 2. **Test Coverage**: Shop module has 25/25 tests passing with comprehensive coverage of UseCases, Policies, and FormRequests
 3. **Middleware Order Matters**: Duplicate middleware causes subtle session bugs - follow documented patterns
-
-## What I Learned
-
-Building this taught me practical lessons about implementing SOLID and DDD principles in a real-world application:
-
-- **Designed custom DDD structure within Laravel modules** - nwidart/laravel-modules provides basic module scaffolding, but I learned to structure Domain, Application, Infrastructure, and UI layers according to DDD principles. This required understanding bounded contexts and designing the folder hierarchy from scratch.
-- **Applied DDD pragmatically per domain** - Implemented basic structure for Auth, but added ValueObjects and Specifications for Shop's complex business logic. Learned that forcing patterns everywhere creates unnecessary complexity; let domain needs guide architectural decisions.
-- **Implemented string IDs at boundaries** - Designed IdCaster pattern to handle JavaScript's safe integer limit (2^53). This boundary strategy keeps domain entities clean while preventing int64 overflow issues that are nearly impossible to debug in production.
-- **Solved middleware ordering issues** - Debugged double middleware registration in Laravel's module lifecycle. Documented the solution because these edge cases are easy to forget and painful to rediscover.
-- **Enforced TypeScript without escape hatches** - Eliminated all `as any` casts by designing generic types and helper functions upfront. This discipline prevents type safety from breaking at runtime during refactors.
-- **Built event-driven architecture** - Designed cross-module communication via domain events. Subscription module reacts to Auth events without coupling, enabling independent refactoring of each bounded context.
-- 
