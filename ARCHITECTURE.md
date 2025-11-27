@@ -92,7 +92,7 @@ $result = $this->userRepository->findWithFilters($filters);
 **Application Layer**
 - **Do:** Orchestrate business workflows via UseCases
 - **Do:** Use repositories (interfaces) and dispatch domain events
-- **Do:** Implement policies and validation DTOs
+- **Do:** Implement policies (DTOs only in Shop module for complex filtering)
 - **Don't:** Use Eloquent directly (use repositories)
 - **Don't:** Access HTTP request/response (get data from controllers)
 - **Don't:** Contain business logic (that belongs in Domain)
@@ -178,7 +178,7 @@ Modules/{ModuleName}/
 - ValueObjects: Simple domain, strings sufficient
 - Specifications: No complex business rules
 - DTOs: Arrays adequate for simple use cases
-- Anti-Corruption Layer: Source of truth for user data
+- Anti-Corruption Layer: Auth is the source of user data, not a consumer
 
 ### Shop Module (Product Catalog & Creator Shops)
 **Complexity:** Complex
