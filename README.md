@@ -16,6 +16,7 @@ A Print-on-Demand marketplace where creators can generate AI artwork and sell it
   - Creator provides base prompt, system generates variations automatically
   - AI prompt enhancement for better results
   - Iterative AI-to-AI feedback: second AI analyzes generated art, describes what it sees, uses that as prompt for next generation
+  - AI outpainting: expand images beyond their original borders to fit different product formats (square to landscape, portrait extensions, etc.)
 - Multi-tenant shop system with custom branding
 - Product catalog with categories and tags
 - Subscription plans with generation credits
@@ -215,16 +216,35 @@ See [ARCHITECTURE.md](ARCHITECTURE.md) for event patterns.
 
 **Core Features (Work in Progress):**
 - User authentication & authorization
-- AI image generation
-- Product catalog
-- Creator shops
-- Subscription plans
+- AI image generation with variations
+- Product catalog with categories & tags
+- Multi-tenant creator shops
+- Subscription plans with credits
 
-**Planned Features:**
-- Nested category navigation (breadcrumbs, parent-child filtering)
+**Frontend Improvements (Planned):**
+- `useAuth()` composable for global auth state & permissions
+- `usePermissions()` composable for role-based UI rendering
+- `useShop()` composable for shop context management
+- `usePagination()` composable for reusable pagination logic
+- Image lazy loading & progressive enhancement
+- Skeleton loaders for improved perceived performance
+- Optimistic UI updates for better UX
+
+**Backend Improvements (Planned):**
+- Queue workers for async job processing
+- Redis caching layer for frequently accessed data
+- Advanced rate limiting per user role
+- Webhook system for external integrations
+- Admin analytics dashboard
+- Database query optimization & indexing
+
+**Business Features (Planned):**
 - Payment integration (Stripe/Mollie)
-- Print fulfillment integration
-- Clothing & accessories products
-- Advanced analytics
-- Creator payouts
-- Mobile app
+- Print fulfillment partner integration
+- Nested category navigation with breadcrumbs
+- Advanced search with filters (price, creator, tags)
+- Creator revenue dashboard & payout system
+- Clothing & accessories product types
+- Order management & tracking
+- Customer review system
+- Mobile-responsive progressive web app
