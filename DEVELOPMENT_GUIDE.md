@@ -13,7 +13,7 @@
 - [Domain Events](#domain-events)
 - [Current Platform Status](#current-platform-status)
 - [Development Workflow](#development-workflow)
-
+ 
 ---
 
 ## Project Overview

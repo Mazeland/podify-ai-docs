@@ -574,7 +574,7 @@ Building this taught me practical lessons about implementing SOLID and DDD princ
 - **Implemented string IDs at boundaries** - Designed IdCaster pattern to handle JavaScript's safe integer limit (2^53). This boundary strategy keeps domain entities clean while preventing int64 overflow issues that are nearly impossible to debug in production.
 - **Solved middleware ordering issues** - Debugged double middleware registration in Laravel's module lifecycle. Documented the solution because these edge cases are easy to forget and painful to rediscover.
 - **Refactored to repository pattern for performance** - Implemented batch loading that reduced 49 queries to 3 for 24 products per page (16x improvement). Clean abstractions made this optimization a 30-minute refactor instead of a multi-day rewrite.
-- **Enforced TypeScript without escape hatches** - Eliminated all `as any` casts by designing generic types and helper functions upfront. This discipline prevents type safety from breaking at runtime during refactors.
+- **Enforced TypeScript without escape hatches** - Eliminated all `as any` casts by designing generic types and helper functions upfront. This discipline prevents type safety from breaking at runtime during refactoring.
 - **Built event-driven architecture** - Designed cross-module communication via domain events. Subscription module reacts to Auth events without coupling, enabling independent refactoring of each bounded context.
 
 ## Summary
