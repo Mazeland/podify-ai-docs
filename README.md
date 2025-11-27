@@ -93,7 +93,7 @@ Each module follows DDD principles with:
 - **Language:** TypeScript
 - **Build Tool:** Vite
 - **Styling:** Tailwind CSS
-- **SPA Bridge:** Inertia.js (server-side routing)
+- **Router:** Vue Router (client-side routing)
 - **State:** Composables pattern
 - **HTTP:** Axios with interceptors
 
