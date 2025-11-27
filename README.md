@@ -9,7 +9,7 @@
 
 ## What It Does
 
-A Print-on-Demand marketplace where creators can generate AI artwork and sell it on physical products. Built to explore DDD architecture patterns and clean code principles in a Laravel SPA.
+A Print-on-Demand marketplace where creators can generate AI artwork and sell it on physical products. Built with a **headless Laravel API** (DDD, SOLID) and a **Vue 3 SPA** frontend, exploring modern architecture patterns with clean separation between business logic and presentation.
 
 **Core Features:**
 - Automated AI image generation with smart variations
@@ -22,7 +22,7 @@ A Print-on-Demand marketplace where creators can generate AI artwork and sell it
 - Subscription plans with generation credits
 - Role-based access (User, Creator, Moderator, Admin)
 
-Built with Domain-Driven Design, event-driven architecture, and full test coverage. See [Tech Stack](#tech-stack) for details.
+The headless API architecture enables independent deployment, better performance, and clear separation of concerns. See [Tech Stack](#tech-stack) for technical details.
 
 ## Quick Start
 
