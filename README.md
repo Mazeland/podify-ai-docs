@@ -16,7 +16,7 @@ A Print-on-Demand marketplace where creators can generate AI artwork and sell it
   - Creator provides base prompt, system generates variations automatically
   - AI prompt enhancement for better results
   - Iterative AI-to-AI feedback: second AI analyzes generated art, describes what it sees, uses that as prompt for next generation
-  - AI outpainting: expand images beyond their original borders to fit different product formats (square to landscape, portrait extensions, etc.)
+  - AI outpainting: expand images beyond their original borders to fit different product formats (square to landscape, portrait extensions, etc.) with 4K and 8K resolution support
 - Multi-tenant shop system with custom branding
 - Product catalog with categories and tags
 - Subscription plans with generation credits
