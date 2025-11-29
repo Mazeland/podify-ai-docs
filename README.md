@@ -1,6 +1,6 @@
 # Podify-AI
 
-> AI-driven Print-on-Demand platform with automated workflows. Creators provide a text prompt, and the system automatically generates multiple image variations, performs outpainting for different product formats, and publishes to multi-tenant shops—no manual intervention required.
+> AI-driven Print-on-Demand platform with automated workflows. Creators can set up automated image generation that creates multiple variations, performs outpainting for different product formats, and publishes to multi-tenant shops—no manual intervention required.
 
 [![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat&logo=laravel)](https://laravel.com)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=flat&logo=vue.js)](https://vuejs.org)
