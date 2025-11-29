@@ -9,7 +9,7 @@
 
 ## What It Does
 
-AI-driven Print-on-Demand platform with automated workflows. Creators can set up automated image generation that creates multiple variations, performs outpainting for different product formats, and publishes to multi-tenant shops—no manual intervention required. Built with a **headless Laravel API** (DDD, SOLID) and a **Vue 3 SPA** frontend, exploring modern architecture patterns with clean separation between business logic and presentation.
+AI-driven Print-on-Demand platform with automated workflows. Creators can set up automated image generation that creates multiple variations, performs outpainting for different product formats, and publishes to multi-tenant shops - no manual intervention required. Built with a **headless Laravel API** (DDD, SOLID) and a **Vue 3 SPA** frontend, exploring modern architecture patterns with clean separation between business logic and presentation.
 
 **Core Features:**
 - Automated AI image generation with smart variations
