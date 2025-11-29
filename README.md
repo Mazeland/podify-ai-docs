@@ -1,6 +1,6 @@
 # Podify-AI
 
-> Podify-AI is a modern Laravel SPA app I'm working on at the moment. It's an AI-driven Print-on-Demand platform empowering creators to generate, sell, and print AI artwork on physical products.
+> AI-driven Print-on-Demand platform with automated workflows. Creators provide a text prompt, and the system automatically generates multiple image variations, performs outpainting for different product formats, and publishes to multi-tenant shops—no manual intervention required.
 
 [![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat&logo=laravel)](https://laravel.com)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=flat&logo=vue.js)](https://vuejs.org)
