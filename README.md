@@ -1,6 +1,6 @@
 # Podify-AI
 
-> AI-driven Print-on-Demand platform with automated workflows. Creators can set up automated image generation that creates multiple variations, performs outpainting for different product formats, and publishes to multi-tenant shops—no manual intervention required.
+> A Print-on-Demand marketplace where creators can generate AI artwork and sell it on physical products.
 
 [![Laravel](https://img.shields.io/badge/Laravel-12-FF2D20?style=flat&logo=laravel)](https://laravel.com)
 [![Vue.js](https://img.shields.io/badge/Vue.js-3-4FC08D?style=flat&logo=vue.js)](https://vuejs.org)
@@ -9,7 +9,7 @@
 
 ## What It Does
 
-A Print-on-Demand marketplace where creators can generate AI artwork and sell it on physical products. Built with a **headless Laravel API** (DDD, SOLID) and a **Vue 3 SPA** frontend, exploring modern architecture patterns with clean separation between business logic and presentation.
+AI-driven Print-on-Demand platform with automated workflows. Creators can set up automated image generation that creates multiple variations, performs outpainting for different product formats, and publishes to multi-tenant shops—no manual intervention required. Built with a **headless Laravel API** (DDD, SOLID) and a **Vue 3 SPA** frontend, exploring modern architecture patterns with clean separation between business logic and presentation.
 
 **Core Features:**
 - Automated AI image generation with smart variations
@@ -80,7 +80,7 @@ Each module follows DDD principles with:
 ## Tech Stack
 
 ### Application Architecture
-**Headless API + SPA** - Laravel serves as a headless API backend with no server-rendered views. The Vue 3 frontend is fully decoupled and communicates exclusively via RESTful JSON endpoints. This enables independent deployment, better frontend performance, and clear separation between business logic (backend) and presentation (frontend).
+**Headless API + SPA** - Laravel serves as a headless API backend with no server-rendered views. The Vue 3 frontend is fully decoupled and communicates exclusively via RESTful JSON endpoints. This enables independent deployment, better frontend performance, and clear separation between business logic and presentation.
 
 ### Backend
 - **Framework:** Laravel 12
