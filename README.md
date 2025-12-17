@@ -36,7 +36,7 @@ The headless API architecture enables independent deployment, better performance
 
 ```bash
 # Clone repository
-git clone <repository-url>
+git clone https://github.com/mazeland/****.git
 cd ai-pod-shop
 
 # Install dependencies
